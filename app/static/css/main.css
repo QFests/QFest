@@ -58,7 +58,91 @@ textarea {
 }
 
 html, body, main {
-    font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Abhaya Libre', serif;
+	font-size: 14px;
+  background-color: #E5E5E5;
+}
+
+.fa-search {
+	color: #34626C!important;
+	margin-bottom: 5px!important;
+}
+
+.btn-search{
+	background-color: transparent!important;
+}
+
+.navbar-right{
+	border-color: #34626C!important;
+	color: #34626C!important;
+}
+
+.navbar-brand {
+	font-family: 'Philosopher', serif;
+	font-size: 30px!important;
+	color: #34626C!important;
+}
+
+.btn-navbar{
+	border-width: 0.1rem!important;
+	border-color: #34626C!important;
+	margin-left:  1rem!important;
+	//margin-right: 1em!important;
+	width: 8rem;
+	text-align: center;
+	color: #34626C!important;
+	font: 18px;
+}
+
+.navbar-nav>li>a {
+	border-width: 10px!important;
+	border-color: #34626C!important;
+//	margin-left:  1rem!important;
+	//margin-right: 1em!important;
+	width: 10rem;
+	text-align: center;
+	color: #34626C!important;
+	background-image: none !important;
+	background-color: none!important;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+/* .grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+} */
+
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>li>a:hover
+{
+	border-width: 10px!important;
+	background-color: none!important;
+	background-color: #34626C!important;
+	color: #ffffff!important;
+	background-image: none !important;
+
+}
+
+.footer {
+	background-color: #ffffff!important;
+	box-shadow: 0 .5rem .5rem rgba(0, 0, 0, .1);
+	padding: 1rem 2rem 3rem;
+	color:  #34626C!important;
+
+}
+
+.navbar, .navbar-collapse, .nav{
+	background-color: #ffffff!important;
+	box-shadow: 0 .5rem .5rem rgba(0, 0, 0, .1)!important;
 }
 
 #accordion h1 {

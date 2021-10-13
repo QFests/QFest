@@ -28,7 +28,7 @@
 {%- block body_attribs %} class="Site"{%- endblock -%}
 {%- block navbar -%}
     <nav class="navbar  navbar-default navbar-fixed-top navbar-light bg-light">
-        <div class="container-fluid">
+        <div class="container-fluid container-nav">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -41,7 +41,7 @@
                 <a class="navbar-brand" href="{{ url_for('main.index') }}">QFEST</a>
             </div>
 
-						
+
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -101,8 +101,9 @@
     </main>
 
 		<footer class = "footer">
-			<div class="grid-container">
-			  <div class="grid-item"><a href="#" target="_blank">Головна</a></div>
+			<div class = "border-top boder-primary w-100">
+			<div class="grid-container ">
+			  <div class="grid-item my-4"><a href="#" target="_blank">Головна</a></div>
 			  <div class="grid-item"><a href="#" target="_blank">Каталог</a></div>
 			  <div class="grid-item"><a href="#" target="_blank">Умови сайту</a></div>
 			  <div class="grid-item"><a href="#" target="_blank">Контакти</a></div>
@@ -111,6 +112,7 @@
 			  <div class="grid-item"><a href="#" target="_blank">Приватність</a></div>
 				<div class="grid-item"></div>
 			  <div class="grid-item"><a href="#" target="_blank">Печенька</a></div>
+			</div>
 			</div>
 		</footer>
 {%- endblock -%}

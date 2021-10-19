@@ -80,6 +80,7 @@
 
 {%- block content -%}
     <main class="container-fluid Site-content">
+			<div class="container ml-0 mr-0 pl-0 pr-0">
         {%- with icon_transform={
     'success':icon('ok'),
     'danger':icon('ban-circle'),
@@ -98,6 +99,7 @@
             {%- endif -%}
         {%- endwith -%}
         {%- block mycontent -%}{%- endblock -%}
+				</div>
     </main>
 
 		<footer class = "footer">

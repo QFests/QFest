@@ -2,59 +2,88 @@
 {%- from "bootstrap/pagination.html" import render_pagination -%}
 {%- import "bootstrap/wtf.html" as wtf -%}
 {%- block mycontent -%}
-<div class="well well-lg">
+
 
     <h1 class="page-header animated fadeInLeft">{{ alcohol.title }}
-        <br>
         {%- if alcohol.subtitle -%}
         <small>{{ alcohol.subtitle }}</small>
         {%- endif -%}
     </h1>
-    <div class="primary-info">
-        {%- if alcohol.image -%}
-        <img class="img-responsive" src="{{ alcohol.image }}" alt="{{ alcohol.title~' Cover' }}">
-        {%- endif -%}
-        <ul class="list-group">
-            <li class="list-group-item">ISBN: {{ alcohol.isbn }}</li>
-            {%- if alcohol.origin_title -%}
-            <li class="list-group-item">Original title: {{ alcohol.origin_title }}</li>
-            {%- endif -%}
-            {%- if alcohol.manufacturer -%}
-            <li class="list-group-item">Manufacturer: {{ alcohol.manufacturer }}</li>
-            {%- endif -%}
-            {%- if alcohol.translator -%}
-            <li class="list-group-item">Translator: {{ alcohol.translator }}</li>
-            {%- endif -%}
-            {%- if alcohol.distributor -%}
-            <li class="list-group-item">Publishing house : {{ alcohol.distributor }}</li>
-            {%- endif -%}
-            {%- if alcohol.pubdate -%}
-            <li class="list-group-item">Publication date : {{ alcohol.pubdate }}</li>
-            {%- endif -%}
-            {%- if alcohol.tags.count() -%}
-            <li class="list-group-item">Label:
-                {% for tag in alcohol.tags %}
-                <a class="tag line-wrap" href="{{ url_for('.tags',search=tag.name) }}">{{ tag.name }} <span
-                        class="badge">{{ tag.alcohols.count() }}</span></a>
-                {% endfor %}
-            </li>
-            {%- endif -%}
-            {%- if alcohol.pages -%}
-            <li class="list-group-item">Number of pages : {{ alcohol.pages }}</li>
-            {%- endif -%}
-            {%- if alcohol.price -%}
-            <li class="list-group-item">Pricing: {{ alcohol.price }}</li>
-            {%- endif -%}
-            {%- if alcohol.binding -%}
-            <li class="list-group-item">Binding: {{ alcohol.binding }}</li>
-            {%- endif -%}
-            <li class="list-group-item">Collection/Available for buy: {{ alcohol.numbers }} / {{ alcohol.can_buy_number()
-                }}
-            </li>
-        </ul>
-    </div>
-    <br>
-    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+		<div class = "container-fluid m-p-0" >
+			<div class = "row row-md-5" id = "product-row">
+				<div class = "col col-md-5" id = "product-img-col">
+					<div id = "product-image-container">
+						{%- if alcohol.image -%}
+						<img id="product-img" src="{{ alcohol.image }}" alt="{{ alcohol.title~' Cover' }}">
+						{%- endif -%}
+					</div>
+
+				</div>
+
+				<div class = "col col-md-7 m-p-0"  id = "product-col" >
+					<div id = "product-info">
+					<ul class="list-group">
+							<li class="list-group-item" id = "product-info-list-item">ISBN: {{ alcohol.isbn }}</li>
+							{%- if alcohol.origin_title -%}
+							<li class="list-group-item" id = "product-info-list-item">Original title: {{ alcohol.origin_title }}</li>
+							{%- endif -%}
+							{%- if alcohol.manufacturer -%}
+							<li class="list-group-item" id = "product-info-list-item">Manufacturer: {{ alcohol.manufacturer }}</li>
+							{%- endif -%}
+							{%- if alcohol.translator -%}
+							<li class="list-group-item" id = "product-info-list-item">Translator: {{ alcohol.translator }}</li>
+							{%- endif -%}
+							{%- if alcohol.distributor -%}
+							<li class="list-group-item" id = "product-info-list-item">Publishing house : {{ alcohol.distributor }}</li>
+							{%- endif -%}
+							{%- if alcohol.pubdate -%}
+							<li class="list-group-item" id = "product-info-list-item">Publication date : {{ alcohol.pubdate }}</li>
+							{%- endif -%}
+							{%- if alcohol.tags.count() -%}
+							<li class="list-group-item" id = "product-info-list-item">Label:
+									{% for tag in alcohol.tags %}
+									<a class="tag line-wrap" href="{{ url_for('.tags',search=tag.name) }}">{{ tag.name }} <span
+													class="badge">{{ tag.alcohols.count() }}</span></a>
+									{% endfor %}
+							</li>
+							{%- endif -%}
+							{%- if alcohol.pages -%}
+							<li class="list-group-item">Number of pages : {{ alcohol.pages }}</li>
+							{%- endif -%}
+							{%- if alcohol.price -%}
+							<li class="list-group-item">Pricing: {{ alcohol.price }}</li>
+							{%- endif -%}
+							{%- if alcohol.binding -%}
+							<li class="list-group-item">Binding: {{ alcohol.binding }}</li>
+							{%- endif -%}
+							<li class="list-group-item">Collection/Available for buy: {{ alcohol.numbers }} / {{ alcohol.can_buy_number()
+									}}
+							</li>
+					</ul>
+
+					<div id = "product-short-description">
+					{%- if alcohol.summary_html -%}
+					{{ alcohol.summary_html|safe }}
+					{%- else -%}
+					{{ alcohol.summary }}
+					{%- endif -%}
+					</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class = "col col-md-16" id = "comment-section">
+				Коментар
+				{%- if alcohol.summary_html -%}
+				{{ alcohol.summary_html|safe }}
+				{%- else -%}
+				{{ alcohol.summary }}
+				{%- endif -%}
+		</div>
+    <!-- <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
         <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingOne">
                 <h4 class="panel-title">
@@ -135,8 +164,8 @@
            href="{{ url_for('alcohol.delete',alcohol_id=alcohol.id) }}">Delete alcohol</a>
         {%- endif -%}
         {%- endif -%}
-    </div>
-</div>
+    </div> -->
+
 <div class="well well-lg">
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" role="tablist" id="log">

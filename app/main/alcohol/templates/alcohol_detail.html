@@ -6,11 +6,11 @@
 
     <h1 class="page-header animated fadeInLeft">{{ alcohol.title }}
         {%- if alcohol.subtitle -%}
-        <small>{{ alcohol.subtitle }}</small>
+        <!-- <small>{{ alcohol.subtitle }}</small> -->
         {%- endif -%}
     </h1>
 
-		<div class = "container-fluid m-p-0" >
+		<div class = "container-fluid m-p-0 site-content">
 			<div class = "row row-md-5" id = "product-row">
 				<div class = "col col-md-5" id = "product-img-col">
 					<div id = "product-image-container">
@@ -23,6 +23,7 @@
 
 				<div class = "col col-md-7 m-p-0"  id = "product-col" >
 					<div id = "product-info">
+							<h4>ОПИС</h4>
 					<ul class="list-group">
 							<li class="list-group-item" id = "product-info-list-item">ISBN: {{ alcohol.isbn }}</li>
 							{%- if alcohol.origin_title -%}
@@ -62,6 +63,8 @@
 							</li>
 					</ul>
 
+
+
 					<div id = "product-short-description">
 					{%- if alcohol.summary_html -%}
 					{{ alcohol.summary_html|safe }}
@@ -73,6 +76,15 @@
 					</div>
 				</div>
 			</div>
+		</div>
+
+		<div class = "col col-md-16" id = "comment-section">
+				Коментар
+				{%- if alcohol.summary_html -%}
+				{{ alcohol.summary_html|safe }}
+				{%- else -%}
+				{{ alcohol.summary }}
+				{%- endif -%}
 		</div>
 
 		<div class = "col col-md-16" id = "comment-section">

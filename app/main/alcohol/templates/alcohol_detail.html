@@ -58,9 +58,7 @@
 							{%- if alcohol.binding -%}
 							<li class="list-group-item">Binding: {{ alcohol.binding }}</li>
 							{%- endif -%}
-							<li class="list-group-item">Collection/Available for buy: {{ alcohol.numbers }} / {{ alcohol.can_buy_number()
-									}}
-							</li>
+							<li class="list-group-item">Total commentars: {{ alcohol.comments.filter_by(deleted=0).count() }}</li>
 					</ul>
 
 

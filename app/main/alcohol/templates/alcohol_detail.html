@@ -143,8 +143,8 @@
 
                         {%- if comment.user_id == current_user.id or current_user.can(Permission.DELETE_OTHERS_COMMENT)
                         -%}
-                        <a class="pull-right btn btn-danger btn-sm"
-                           href="{{ url_for('comment.delete',comment_id=comment.id,next=request.url) }}">Delete</a>
+                        <a class="pull-right btn"
+                           href="{{ url_for('comment.delete',comment_id=comment.id,next=request.url) }}"><i class="fas fa-trash-alt fa-2x"></i></a>
                         {%- endif -%}
                     </div>
                 </div>

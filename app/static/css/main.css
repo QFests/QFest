@@ -269,6 +269,49 @@ html, body, main {
 	margin-bottom: 25px;
 }
 
+.panel-heading{
+	background-image: none!important;
+	color: #ffff!important;
+	border: none!important;
+}
+
+#sign-in-body{
+	border: 2px solid!important;
+	border-color: #34626C!important;
+}
+
+#register-body{
+	border: 2px solid!important;
+	border-color: #C6B497!important;
+}
+
+#panel-heading-sign-in
+{
+	background-color: #34626C!important;
+}
+
+#panel-heading-register
+{
+	background-color: #C6B497!important;
+}
+
+#form-login>#submit{
+	background-color: #34626C!important;
+	background-image: none!important;
+}
+
+#form-login>.btn{
+ background-color: #C6B497!important;
+ background-image: none!important;
+ border: none!important;
+}
+
+#form-register>#submit{
+	background-color: #C6B497!important;
+  background-image: none!important;
+  border: none!important;
+}
+
 .m-p-0
 {
 	margin: 0px 0px 0px 0px!important;
@@ -286,12 +329,12 @@ html, body, main {
 }
 
 .avatar-large {
-    width: 250px;
-    height: 250px;
-    border-radius: 125px;
-    -webkit-border-radius: 125px;
-    -moz-border-radius: 125px;
-    margin: 20px;
+    width: 300px;
+    height: 300px;
+    //border-radius: 125px;
+    //-webkit-border-radius: 125px;
+    //-moz-border-radius: 125px;
+    //margin: 20px;
 }
 
 .avatar-small {
@@ -362,6 +405,16 @@ html, body, main {
 .avatar-large:hover {
     transform: rotate(360deg);
 }
+
+#email, #password, #name, #password2 {
+	border-radius: 25px!important;
+}
+
+#panel-login, #panel-registration{
+
+	margin-top: 50px;
+}
+
 
 //-------------------------------------------------------------------------------
 @media screen and (max-width: 768px) {

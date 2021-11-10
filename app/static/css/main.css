@@ -233,7 +233,7 @@ html, body, main {
 
 #product-image-container
 {
-	height: 36rem;
+	height: 560px;
 	min-width: 24rem!important;
 	text-align: center;
 	background-color: #ffffff;
@@ -243,6 +243,9 @@ html, body, main {
 #product-img
 {
 	height: 36rem;
+	max-width: 475px;
+	margin-top: 34px;
+	margin-bottom: 34px;
 }
 
 #product-img-col {
@@ -259,8 +262,34 @@ html, body, main {
 #product-short-description
 {
 	padding: 0px 25px 25px 25px!important;
+	height: 258px;
 	text-align: justify
 }
+
+#btn-add-review{
+	border-radius: 0px!important;
+	background-color: #34626C!important;
+	border: 1px solid!important;
+
+	border-color: #34626C!important;
+	text-align: center!important;
+	color: #ffffff!important;
+	background-image: none!important;
+	font-weight: bold;
+}
+
+#btn-buy-product{
+	border-radius: 0px!important;
+	background-color: #ffffff!important;
+	border: 1px solid!important;
+
+	border-color: #34626C!important;
+	text-align: center!important;
+	color: #34626C!important;
+	background-image: none!important;
+	font-weight: bold;
+}
+
 
 #comment-section
 {
@@ -318,6 +347,11 @@ html, body, main {
 	padding: 0px 0px 0px 0px!important;
 }
 
+.m-0
+{
+	margin: 0px 0px 0px 0px!important;
+}
+
 .avatar {
     background-position: center;
     box-shadow: 0 0 8px rgba(0, 0, 0, .8);
@@ -364,22 +398,22 @@ html, body, main {
 	//height: 100%;
 	background-color: #ffffff;
 	//padding: 1.5rem 1.5rem 1.5rem 1.5rem;
-	height: 36rem;
+	height: 40rem;
 	margin-left: 25px;
 
 }
 
-#product-info>h4{
+#product-info>.container-fluid>.row>h4{
 	font-size: 1.5rem !important;
 	margin: 0px 0px 0px 0px!important;
 	padding: 25px 25px 0px 25px!important;
 }
 
-#product-info>.list-group>.list-group-item{
+#product-info>.container-fluid>.row>.list-group>.list-group-item{
 	padding-left: 0px!important;
 }
 
-#product-info>.list-group{
+#product-info>.container-fluid>.row>.list-group{
 	padding: 0px 25px 0px 25px!important;
 	box-shadow: none;
 }

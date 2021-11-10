@@ -2,24 +2,19 @@
 {% import "bootstrap/wtf.html" as wtf %}
 {% block styles %}
     {{ super() }}
-    <style>
-        .Site {
-            background-color: gray;
-        }
 
-    </style>
 {% endblock %}
 {% block mycontent %}
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
-            <div class="panel panel-default animated fadeInUp">
-                <div class="panel-heading">
+            <div class="panel panel-default animated fadeInUp" id = "panel-login">
+                <div class="panel-heading" id = "panel-heading-sign-in">
                     <header class="panel-title">
-                        User login
+                        Welcome
                     </header>
                 </div>
-                <div class="panel-body">
-                    <form method="post" class="form" role="form">
+                <div class="panel-body" id = "sign-in-body" >
+                    <form method="post" class="form" id = "form-login" role="form">
                         {{ form.hidden_tag() }}
                         {{ wtf.form_field(form.email) }}
                         {{ wtf.form_field(form.password) }}
@@ -34,4 +29,3 @@
         </div>
     </div>
 {% endblock %}
-

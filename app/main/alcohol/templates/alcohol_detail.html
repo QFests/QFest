@@ -22,7 +22,19 @@
 				</div>
 
 				<div class = "col col-md-7 m-p-0"  id = "product-col" >
+
 					<div id = "product-info">
+						<div class = "container-fluid m-p-0">
+
+							<div class = "row row-md-5 m-p-0">
+								<button type="button" class="btn btn-primary btn-block" data-toggle="modal"
+																	data-target="#myModal" id = "btn-buy-product">
+											Купити
+										</button>
+									</div>
+
+							<div class = "row row-md-5 m-0">
+
 							<h4>ОПИС</h4>
 					<ul class="list-group">
 							<li class="list-group-item" id = "product-info-list-item">ISBN: {{ alcohol.isbn }}</li>
@@ -70,127 +82,24 @@
 					{{ alcohol.summary }}
 					{%- endif -%}
 					</div>
+				</div>
+			</div>
 
+			<div class = "row row-md-5 m-p-0">
+				<button type="button" class="btn btn-primary btn-block" data-toggle="modal"
+													data-target="#myModal" id = "btn-add-review">
+							Додати відгук
+						</button>
 					</div>
+				</div>
 				</div>
 			</div>
 		</div>
 
-		<div class = "col col-md-16" id = "comment-section">
-				Коментар
-				{%- if alcohol.summary_html -%}
-				{{ alcohol.summary_html|safe }}
-				{%- else -%}
-				{{ alcohol.summary }}
-				{%- endif -%}
-		</div>
 
-		<div class = "col col-md-16" id = "comment-section">
-				Коментар
-				{%- if alcohol.summary_html -%}
-				{{ alcohol.summary_html|safe }}
-				{%- else -%}
-				{{ alcohol.summary }}
-				{%- endif -%}
-		</div>
-    <!-- <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingOne">
-                <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#summary"
-                       aria-expanded="true" aria-controls="collapseOne">
-                        Brief introduction
-
-                    </a>
-                </h4>
-            </div>
-            <div id="summary" class="panel-collapse collapse in" role="tabpanel"
-                 aria-labelledby="headingOne">
-                <div class="panel-body">
-                    {%- if alcohol.summary_html -%}
-                    {{ alcohol.summary_html|safe }}
-                    {%- else -%}
-                    {{ alcohol.summary }}
-                    {%- endif -%}
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="catalog">
-                <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                       href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Table of Contents
-
-                    </a>
-                </h4>
-            </div>
-            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
-                 aria-labelledby="headingTwo">
-                <div class="panel-body">
-                    {%- if alcohol.catalog_html -%}
-                    {{ alcohol.catalog_html|safe }}
-                    {%- else -%}
-                    {{ alcohol.catalog }}
-                    {%- endif -%}
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="btn-group">
-        {%- if current_user.is_authenticated -%}
-        {%- with log=current_user.purchase(alcohol) -%}
-        {%- if log -%}
-        <a class="btn btn-primary"
-           href="{{ url_for('log.alcohol_return',log_id=log.id,next=request.full_path ) }}">
-            Return
-        </a>
-        {%- else -%}
-        <a class="btn btn-success"
-           href="{{ url_for('log.alcohol_buy',alcohol_id=alcohol.id,next=request.full_path) }}"
-           {%- if not alcohol.can_buy() -%}disabled="disabled" {%- endif -%}>
-            Buy
-        </a>
-        {%- endif -%}
-        {%- endwith -%}
-        {%- endif -%}
-        {%- if current_user.can(Permission.UPDATE_ALCOHOL_INFORMATION) -%}
-        <a type="button" class="btn btn-warning" href="{{ url_for('alcohol.edit',alcohol_id=alcohol.id) }}">
-            Edit alcohol information
-        </a>
-        {%- endif -%}
-
-        {%- if alcohol.hidden -%}
-        {%- if current_user.is_administrator() -%}
-        <a type="button" class="btn btn-info"
-           href="{{ url_for('alcohol.put_back',alcohol_id=alcohol.id) }}">Restore alcohols
-        </a>
-        {%- endif -%}
-        {%- else -%}
-        {%- if current_user.can(Permission.DELETE_ALCOHOL) -%}
-        <a type="button" class="btn btn-danger"
-           href="{{ url_for('alcohol.delete',alcohol_id=alcohol.id) }}">Delete alcohol</a>
-        {%- endif -%}
-        {%- endif -%}
-    </div> -->
-
-<div class="well well-lg">
+<div class>
     <!-- Nav tabs -->
-    <ul class="nav nav-tabs" role="tablist" id="log">
-        {%- with tabindex= request.args.get('show') or '0' -%}
-        <li role="presentation" {%- if tabindex=='0' -%}class="active" {%- endif -%}><a
-                href="{%- if tabindex=='0' -%}#log{%- else -%}{{ url_for('alcohol.detail',alcohol_id=alcohol.id,show=0,_anchor='log') }}{%- endif -%}"
-                role="tab">Alcohol review</a></li>
-        <li role="presentation" {%- if tabindex=='1' -%}class="active" {%- endif -%}><a
-                href="{%- if tabindex=='1' -%}#log{%- else -%}{{ url_for('alcohol.detail',alcohol_id=alcohol.id,show=1,_anchor='log') }}{%- endif -%}"
-                role="tab">Current purchase information</a></li>
-        <li role="presentation" {%- if tabindex=='2' -%}class="active" {%- endif -%}><a
-                href="{%- if tabindex=='2' -%}#log{%- else -%}{{ url_for('alcohol.detail',alcohol_id=alcohol.id,show=2,_anchor='log') }}{%- endif -%}"
-                role="tab">Historical purchase information</a></li>
-        {%- endwith -%}
-    </ul>
+
     <!-- Tab panes -->
     <div class="tab-content">
 
@@ -198,16 +107,7 @@
 
         <ul class="list-group">
             {%- if current_user.is_authenticated -%}
-            <li class="list-group-item list-group-item">
-                <div class="row">
-                    <div class="col-md-4 col-md-offset-4">
-                        <button type="button" class="btn btn-primary btn-block" data-toggle="modal"
-                                data-target="#myModal">
-                            I will evaluate this alcohol
-                        </button>
-                    </div>
-                </div>
-            </li>
+
             {%- endif -%}
             {%- for comment in data -%}
             <li class="list-group-item clearfix">

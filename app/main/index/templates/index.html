@@ -109,6 +109,37 @@
                 {% endif %}
             {% endfor %}
         </tr>
+        <tr>
+            {% for alcohol in alcohols %}
+                {% if 12 < loop.index <= 16 %}
+                <td class="hidden-xs">
+                        <div id = "product-image-container">
+                            {%- if alcohol.image -%}
+                            <img id="product-img" src="{{ alcohol.image }}" alt="{{ alcohol.title~' Cover' }}">
+                            {%- else -%}
+                            <img id="product-img" src="https://image.shutterstock.com/image-photo/text-coming-soon-appearing-behind-260nw-1934155757.jpg">
+                            {%- endif -%}
+                        </div>
+                        <a href="{{ url_for('alcohol.detail',alcohol_id=alcohol.id) }}">{{ alcohol.title }}</a>
+
+                    {% if current_user.is_authenticated %}
+                    {% with log =current_user.purchase(alcohol) %}
+                        {% if log %}
+                            <a class="btn btn-primary"
+                                   href="{{ url_for('log.alcohol_return',log_id=log.id,next=request.path) }}">Del from fav</a>
+                        {% else %}
+                            <a class="btn btn-success"
+                                   href="{{ url_for('log.alcohol_buy',alcohol_id=alcohol.id,next=request.path) }}"
+                                   {% if not alcohol.can_buy() %}disabled="disabled"{% endif %}>
+                                Add to fav
+                            </a>
+                        {% endif %}
+                    {% endwith %}
+                    {% endif %}
+                </td>
+                {% endif %}
+            {% endfor %}
+        </tr>
         </tbody>
     </table>
     <div class="row animated fadeInUp delay">

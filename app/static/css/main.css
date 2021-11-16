@@ -86,6 +86,15 @@ html, body, main {
 	padding-bottom: 5px!important;
 }
 
+.fa-trash-alt {
+	color: #dcf0f5!important;
+
+}
+
+.fa-trash-alt:hover{
+	color: #34626C!important;
+}
+
 .btn-search{
 	background-color: transparent!important;
 	padding-left: 2px!important;

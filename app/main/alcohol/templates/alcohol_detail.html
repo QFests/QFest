@@ -193,7 +193,6 @@
                     <a href="{{ url_for('user.detail' ,user_id=log.user.id) }}">{{ log.user.name }}</a>
                 </td>
                 <td class="hidden-xs">{{ log.user.email }}</td>
-                </td>
                 <td>{{ log.buy_timestamp.strftime('%d %B %Y - %H:%M:%S') }}</td>
                 <td>{{ log.return_timestamp.strftime('%d %B %Y - %H:%M:%S') }}</td>
             </tr>
@@ -221,7 +220,6 @@
                     <a href="{{ url_for('user.detail' ,user_id=log.user.id) }}">{{ log.user.name }}</a>
                 </td>
                 <td class="hidden-xs">{{ log.user.email }}</td>
-                </td>
                 <td>{{ log.buy_timestamp.strftime('%d %B %Y - %H:%M:%S') }}</td>
                 <td>{{ log.return_timestamp.strftime('%d %B %Y - %H:%M:%S') }}</td>
             </tr>

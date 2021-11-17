@@ -37,7 +37,11 @@
                     <a class="btn btn-danger" href="{{ url_for('auth.change_password',user_id=user.id) }}">
                         Change password</a>
                 {% endif %}
-
+								<a href="{{ url_for('log.index') }}">Purchase information</a>
+								<a href="{{ url_for('alcohol.index') }}">List of alcohols</a>
+							  <a href="{{ url_for('alcohol.tags') }}">Tag</a>
+								<a href="{{ url_for('user.index') }}">Account</a>
+								<a href="{{ url_for('auth.logout') }}">Sign out</a>
             </div>
         </div>
 

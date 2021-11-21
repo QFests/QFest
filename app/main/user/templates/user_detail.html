@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% from "bootstrap/pagination.html" import render_pagination %}
 {% block mycontent %}
-    <div class="jumbotron">
-        <div class="row">
+    <div class="jumbotron" id = "user-detail">
+        <div class="row row-md-12">
             {%- if user.avatar_url() -%}
-                <div class="col-md-3 animated bounceIn">
+                <div class="col-md-5 animated bounceIn">
                     {%- if current_user.id == user.id or current_user.can(Permission.UPDATE_OTHERS_INFORMATION) -%}
                         <a href="{{ url_for('user.avatar',user_id=user.id) }}" data-toggle="tooltip"
                            data-placement="bottom" title="Click to modify avatar">
@@ -17,7 +17,7 @@
                     {%- endif -%}
                 </div>
             {%- endif -%}
-            <div class="col-md-6 col-md-offset-1 animated fadeIn">
+            <div class="col col-md-4" id = "user-short-description">
                 <h1 class="page-header">{{ user.name }}
                     {% if user.headline %}
                         <small>{{ user.headline }}</small>
@@ -30,15 +30,24 @@
                     <p>Major: {{ user.major }}</p>
                 {% endif %}
                 <p>Join date: {{ user.member_since.strftime('%d %B %Y - %H:%M:%S') }}</p>
-                {% if current_user.id==user.id or current_user.can(Permission.UPDATE_OTHERS_INFORMATION) %}
-                    <a class="btn btn-info" href="{{ url_for('user.edit',user_id=user.id) }}">Edit information</a>
-                {% endif %}
-                {% if current_user.id==user.id %}
-                    <a class="btn btn-danger" href="{{ url_for('auth.change_password',user_id=user.id) }}">
-                        Change password</a>
-                {% endif %}
+
 
             </div>
+
+						<div class="col col-md-3" id = "user-settings-menu">
+							{% if current_user.id==user.id or current_user.can(Permission.UPDATE_OTHERS_INFORMATION) %}
+								<a class = "btn" href="{{ url_for('user.edit',user_id=user.id) }}">Edit information</a>
+							{% endif %}
+							{% if current_user.id==user.id %}
+								<a class = "btn" href="{{ url_for('auth.change_password',user_id=user.id) }}">Change password</a>
+							{% endif %}
+							<a class = "btn" href="{{ url_for('log.index') }}">Purchase information</a>
+							<a class = "btn" href="{{ url_for('alcohol.index') }}">List of alcohols</a>
+							<a class = "btn" href="{{ url_for('alcohol.tags') }}">Tag</a>
+							<a class = "btn" href="{{ url_for('user.index') }}">Account</a>
+							<a class = "btn" href="{{ url_for('auth.logout') }}">Sign out</a>
+						</div>
+
         </div>
 
 

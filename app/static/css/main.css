@@ -39,8 +39,16 @@ html, body {
     -ms-flex: 1 0 auto;
     flex: 1 0 auto;
     width: 100%;
-    margin-top: 60px;
+    margin-top: 100px!important;
 }
+
+.usr-bttn{
+	width:  100px!important;
+	height: 100%!important;
+	padding-top: 10px!important;
+	padding-bottom: 0px!important;
+}
+
 
 .panel.panel-inverse {
     -webkit-box-flex: none;
@@ -104,25 +112,30 @@ html, body, main {
 .navbar-right{
 	border-color: #34626C!important;
 	color: #34626C!important;
+	margin-right: 15px!important;
 }
 
 .navbar-brand {
 	font-family: 'Philosopher', serif;
 	font-size: 30px!important;
 	color: #34626C!important;
+	margin-top: 10px;
 }
 
 .w-100{
 	width: 100%;
 }
 
-.navbar-nav>li>a {
+.sign-in-login{
 	border-width: 10px!important;
 	border-color: #34626C!important;
 	margin-left:  1rem!important;
 	margin-right: 1rem!important;
 	padding-top: 10px!important;
 	padding-bottom: 10px!important;
+
+	margin-top: 10px!important;
+	margin-bottom: 10px!important;
 
 	width: 9rem;
 	text-align: center;
@@ -132,14 +145,34 @@ html, body, main {
 	border: 1px solid #34626C!important;
 }
 
+/* .navbar-nav>li>a {
+	border-width: 10px!important;
+	border-color: #34626C!important;
+	margin-left:  1rem!important;
+	margin-right: 1rem!important;
+	padding-top: 10px!important;
+	padding-bottom: 10px!important;
+
+	margin-top: 10px!important;
+	margin-bottom: 10px!important;
+
+	width: 9rem;
+	text-align: center;
+	color: #34626C!important;
+	background-image: none !important;
+	background-color: none!important;
+	border: 1px solid #34626C!important;
+} */
+
 .navbar-right {
 	height: 100%!important;
 	box-shadow: none!important;
-	//padding-bottom: 0.1rem!important;
-	padding-top: 0.25rem!important;
 
 }
 
+.fa-user {
+	margin-left: 12px!important;
+}
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -155,7 +188,35 @@ html, body, main {
 	color: #606060;
 }
 
+.navbar-toggle{
+	margin-top: 17px!important;
+}
+
 @media (max-width: 768px) {
+	.usr-bttn {
+		width:  100%!important;
+	}
+
+	#liked-bttn-text, #account-bttn-text{
+		font-size: 30px!important;
+	}
+
+	.fa-user {
+		margin-left: 0px!important;
+	}
+
+	.container-nav {
+		margin: 0px;
+		padding: 0px;
+	}
+
+	.navbar-header>button{
+		margin-right: 15px!important;
+	}
+
+	.navbar-brand{
+		margin-left: 15px!important;
+	}
 	.navbar-nav>li>a {
 
 		border: none!important;
@@ -187,10 +248,9 @@ html, body, main {
 
 .navbar-default .navbar-nav>.active>a,
 .navbar-default .navbar-nav>.open>a,
-.navbar-default .navbar-nav>li>a:focus,
-.navbar-default .navbar-nav>li>a:hover
+.sign-in-login:hover,
+.sign-in-login:active
 {
-	//border-width: 10px!important;
 	background-color: none!important;
 	background-color: #34626C!important;
 	color: #ffffff!important;
@@ -211,6 +271,7 @@ html, body, main {
 	background-color: #ffffff!important;
 	border-color: #ffffff!important;
 	box-shadow: 0 .5rem .5rem rgba(0, 0, 0, .1)!important;
+	height: 65px!important;
 }
 
 
@@ -372,12 +433,8 @@ html, body, main {
 }
 
 .avatar-large {
-    width: 300px;
-    height: 300px;
-    //border-radius: 125px;
-    //-webkit-border-radius: 125px;
-    //-moz-border-radius: 125px;
-    //margin: 20px;
+    max-width: 400px;
+    height: 400px;
 }
 
 .avatar-small {
@@ -400,6 +457,33 @@ html, body, main {
     -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, .8);
     -moz-box-shadow: 0 0 2px rgba(0, 0, 0, .8);
 }
+
+#user-short-description
+{
+	padding-left: 0px!important;
+	padding-right: 0px!important;
+}
+
+#user-detail>.row>.col{
+	height: 400px!important;
+}
+
+#user-settings-menu>.btn{
+	width:100%!important;
+	height: 57px!important;
+	//border: #34626C solid;
+	text-align: left;
+	color: #34626C!important;
+	font-size: 18px;
+	padding-top: 16px!important;
+}
+
+#user-settings-menu>.btn:hover{
+	background-color: #34626C!important;
+	color: #ffffff!important;
+	font-size: 18px;
+}
+
 
 
 #product-info
@@ -496,6 +580,12 @@ html, body, main {
 
 
 
+}
+
+@media (min-width: 768px) {
+	.navbar-collapse.collapse{
+		height: 65px!important;
+	}
 }
 
 @media (max-width: 991px) {

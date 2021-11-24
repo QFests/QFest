@@ -197,8 +197,21 @@ html, body, main {
 		width:  100%!important;
 	}
 
-	#liked-bttn-text, #account-bttn-text{
-		font-size: 30px!important;
+	.usr-bttn{
+		padding-top: 5px!important;
+		padding-bottom: 3px!important;
+	}
+
+	.sign-in-login{
+		height: 100%!important;
+		margin: 0px!important;
+		font-size: 28px!important;
+		padding-left: 10px!important;
+	}
+
+	#liked-bttn-text, #account-bttn-text, #add-alcohol-bttn-text{
+		font-size: 28px!important;
+		margin-top: 6px!important;
 	}
 
 	.fa-user {
@@ -272,6 +285,13 @@ html, body, main {
 	border-color: #ffffff!important;
 	box-shadow: 0 .5rem .5rem rgba(0, 0, 0, .1)!important;
 	height: 65px!important;
+	margin-left:0px;
+}
+
+.navbar-collapse{
+	margin-left: 0px!important;
+	margin-right: 0px!important;
+
 }
 
 
@@ -325,6 +345,7 @@ html, body, main {
 	color: #ffffff!important;
 	text-decoration:none!important;
 } */
+
 
 .card:hover>.card-name{
 	background-color:  #34626C!important;
@@ -659,10 +680,20 @@ html, body, main {
 
 }
 
+
+
 @media (min-width: 768px) {
-	.navbar-collapse.collapse{
-		height: 65px!important;
+	/* .navbar-collapse.collapse{
+		height: 100px!important;
+
+	} */
+
+	#add-alcohol-bttn-text{
+		padding-left: 0px;
 	}
+
+
+
 }
 
 @media (max-width: 991px) {

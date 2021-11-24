@@ -44,20 +44,26 @@
 
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse m-p-0" id="bs-example-navbar-collapse-1">
                 <!-- <ul class="nav navbar-nav"> -->
-								<ul class="nav navbar-nav navbar-right">
+								<ul class="nav navbar-nav navbar-right m-p-0">
                     {%- if current_user.is_authenticated -%}
                         {%- if current_user.can(Permission.ADD_ALCOHOL) -%}
-                            <li {%- if request.path == url_for('alcohol.add') %} class="active"{%- endif -%} ><a
-                                    href="{{ url_for('alcohol.add') }}">Add new alcohol</a></li>
+                            <li {%- if request.path == url_for('alcohol.add') %} class="active"{%- endif -%} >
+															<a href="{{ url_for('alcohol.add') }}" class = "usr-bttn">
+																<div class="container container-fluid m-p-0">
+																<div class="col-xs-1 col-sm-12 m-0"><i class="far fa-plus-square fa-2x"></i></div>
+														  	<div class="col-xs-11 col-sm-12 m-0" id =  "add-alcohol-bttn-text">Add alcohol</div>
+															</div>
+														</a>
+													</li>
                         {%- endif -%}
 
                         <li {%- if request.path == url_for('log.index') %} class="active"{%- endif -%} >
 													<a href="{{ url_for('log.index') }}" class = "usr-bttn">
 														<div class="container container-fluid m-p-0">
-															<div class="col-xs-4 col-sm-12 m-0"><i class="far fa-heart  fa-2x"></i></div>
-													  	<div class="col-xs-8 col-sm-12 m-0" id =  "liked-bttn-text">Liked</div>
+															<div class="col-xs-1 col-sm-12 m-0"><i class="far fa-heart  fa-2x"></i></div>
+													  	<div class="col-xs-11 col-sm-12 m-0" id =  "liked-bttn-text">Liked</div>
 														</div>
 													</a>
 
@@ -75,8 +81,8 @@
 
 														<a  href="{{ url_for('user.detail',user_id=current_user.id) }}" class = "usr-bttn">
 															<div class="container container-fluid m-p-0">
-																<div class="col-xs-4 col-sm-12 m-0"><i class="far fa-user fa-2x"></i></div>
-														  	<div class="col-xs-8 col-sm-12 m-0" id = "account-bttn-text">Account</div>
+																<div class="col-xs-1 col-sm-12 m-0"><i class="far fa-user fa-2x"></i></div>
+														  	<div class="col-xs-11 col-sm-12 m-0" id = "account-bttn-text">Account</div>
 															</div>
 														</a>
 												</li>

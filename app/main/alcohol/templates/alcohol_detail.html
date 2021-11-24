@@ -27,11 +27,11 @@
 						<div class = "container-fluid m-p-0">
 
 							<div class = "row row-md-5 m-p-0">
-								<button type="button" class="btn btn-primary btn-block" data-toggle="modal"
-																	data-target="#myModal" id = "btn-buy-product">
+			
+										<a href="href={{ url_for('log.alcohol_buy',alcohol_id=alcohol.id,next=request.path) }}" id = "btn-buy-product">
 											Купити
-										</button>
-									</div>
+										</a>
+
 
 							<div class = "row row-md-5 m-0">
 

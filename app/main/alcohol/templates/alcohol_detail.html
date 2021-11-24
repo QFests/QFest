@@ -98,7 +98,7 @@
         {%- endif -%}
 
 				{%- if current_user.can(Permission.UPDATE_ALCOHOL_INFORMATION) -%}
-				<a type="button" class="btn btn-warning edit-product" href="/alcohols/6/edit/">
+				<a type="button" class="btn btn-warning edit-product" href="{{ url_for('alcohol.edit',alcohol_id=alcohol.id) }}">
 						Edit alcohol information
 				</a>
 				{%- endif -%}

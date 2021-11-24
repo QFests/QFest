@@ -427,8 +427,8 @@ html, body, main {
 
 #product-short-description
 {
-	padding: 0px 25px 25px 25px!important;
-	height: 248px;
+	padding: 0px 25px 0px 25px!important;
+	height: 208px;
 	text-align: justify
 }
 

@@ -27,15 +27,10 @@
 						<div class = "container-fluid m-p-0">
 
 							<div class = "row row-md-5 m-p-0">
-			
-										<a href="href={{ url_for('log.alcohol_buy',alcohol_id=alcohol.id,next=request.path) }}" id = "btn-buy-product">
-											Купити
-										</a>
-
 
 							<div class = "row row-md-5 m-0">
 
-							<h4>ОПИС</h4>
+							<h4><div id = "product-info-header">ОПИС</div></h4>
 					<ul class="list-group">
 							<li class="list-group-item" id = "product-info-list-item">ISBN: {{ alcohol.isbn }}</li>
 							{%- if alcohol.origin_title -%}
@@ -87,9 +82,16 @@
 
 			<div class = "row row-md-5 m-p-0">
 				<button type="button" class="btn btn-primary btn-block" data-toggle="modal"
+													data-target="#myModal" id = "btn-buy-product">
+							Купити
+						</button>
+				<button type="button" class="btn btn-primary btn-block" data-toggle="modal"
 													data-target="#myModal" id = "btn-add-review">
 							Додати відгук
-						</button>
+				</button>
+
+
+
 					</div>
 				</div>
 				</div>

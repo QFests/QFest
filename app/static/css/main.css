@@ -432,7 +432,29 @@ html, body, main {
 	text-align: justify
 }
 
+#product-info-header{
+	padding-left: 15px!important;
+	padding-top: 15px!important;
+}
+
+#btn-add-review, #btn-buy-product{
+		border-radius: 0px!important;
+	background-color: #ffffff!important;
+	border: 1px solid!important;
+
+	border-color: #34626C!important;
+	text-align: center!important;
+	color: #34626C!important;
+	background-image: none!important;
+	font-weight: bold;
+	margin-top: 0px!important;
+}
+
 #btn-add-review{
+	border-top: none!important;
+}
+
+#btn-buy-product:hover, #btn-add-review:hover{
 	border-radius: 0px!important;
 	background-color: #34626C!important;
 	border: 1px solid!important;
@@ -443,19 +465,6 @@ html, body, main {
 	background-image: none!important;
 	font-weight: bold;
 }
-
-#btn-buy-product{
-	border-radius: 0px!important;
-	background-color: #ffffff!important;
-	border: 1px solid!important;
-
-	border-color: #34626C!important;
-	text-align: center!important;
-	color: #34626C!important;
-	background-image: none!important;
-	font-weight: bold;
-}
-
 
 #comment-section
 {

@@ -17,6 +17,7 @@
 						{%- if alcohol.image -%}
 						<img id="product-img" src="{{ alcohol.image }}" alt="{{ alcohol.title~' Cover' }}">
 						{%- endif -%}
+
 					</div>
 
 				</div>
@@ -91,7 +92,16 @@
 				</button>
 
 
+				{%- if current_user.can(Permission.DELETE_ALCOHOL) -%}
+        <a type="button" class="btn btn-danger edit-product"
+           href="{{ url_for('alcohol.delete',alcohol_id=alcohol.id) }}">Delete alcohol</a>
+        {%- endif -%}
 
+				{%- if current_user.can(Permission.UPDATE_ALCOHOL_INFORMATION) -%}
+				<a type="button" class="btn btn-warning edit-product" href="/alcohols/6/edit/">
+						Edit alcohol information
+				</a>
+				{%- endif -%}
 					</div>
 				</div>
 				</div>

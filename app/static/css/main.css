@@ -428,7 +428,7 @@ html, body, main {
 #product-short-description
 {
 	padding: 0px 25px 25px 25px!important;
-	height: 258px;
+	height: 248px;
 	text-align: justify
 }
 
@@ -452,6 +452,10 @@ html, body, main {
 
 #btn-add-review{
 	border-top: none!important;
+}
+
+.edit-product{
+	width: 50%;
 }
 
 #btn-buy-product:hover, #btn-add-review:hover{

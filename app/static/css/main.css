@@ -310,6 +310,78 @@ html, body, main {
 
 }
 
+#main-page-cintent{
+	margin-top:  40px!important;
+
+}
+
+.card-name{
+	height: 50px;
+	padding-top: 15px;
+}
+
+/* .card:hover{
+	background-color:  #34626C!important;
+	color: #ffffff!important;
+	text-decoration:none!important;
+} */
+
+.card:hover>.card-name{
+	background-color:  #34626C!important;
+	color: #ffffff!important;
+	text-decoration:none!important;
+}
+
+.card:hover{
+	border: 4px solid #34626C ;
+}
+
+.card{
+	color: #34626C;
+}
+
+
+/* .card-name>a{
+	height: 100px!important;
+	width: 100px!important;
+	padding-left: 10px;
+	padding-right:10px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+} */
+
+.card{
+	//height: 36rem!important;
+	//width: 30rem!important;
+	width: 100%;
+	height: 34rem;
+	text-align: center;
+	background-color: #ffffff!important;
+	margin-bottom: 30px;
+}
+
+
+
+.card-img{
+		height: 30rem!important;
+		max-width: 283px!important;
+
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+
+}
+
+.card-img-container
+{
+	height: 30rem!important;
+	width: 100%!important
+//	text-align: center!important;
+}
+
+
+
 #product-img
 {
 	height: 36rem;
@@ -544,6 +616,11 @@ html, body, main {
 
 
 //-------------------------------------------------------------------------------
+
+
+
+
+
 @media screen and (max-width: 768px) {
     .primary-info {
         display: flex;
@@ -896,6 +973,7 @@ html, body, main {
 
 @-moz-keyframes fadeInDown {
     0% {
+
         opacity: 0;
         -moz-transform: translateY(-20px);
     }

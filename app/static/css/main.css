@@ -15,6 +15,12 @@ html, body {
 	margin-bottom: 1rem;
 }
 
+#get_alcohol_from_douban{
+	background-color: #34626C!important;
+	background-image: none!important;
+	color: #ffffff!important;
+}
+
 .Site {
     display: -webkit-box;
     display: -moz-box;

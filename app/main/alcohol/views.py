@@ -46,6 +46,7 @@ def detail(alcohol_id):
     page = request.args.get('page', 1, type=int)
     form = CommentForm()
 
+
     if show in (1, 2):
         pagination = the_alcohol.logs.filter_by(returned=show - 1) \
             .order_by(Log.buy_timestamp.desc()).paginate(page, per_page=5)
@@ -67,16 +68,11 @@ def edit(alcohol_id):
         alcohol.isbn = form.isbn.data
         alcohol.title = form.title.data
         alcohol.origin_title = form.origin_title.data
-        alcohol.subtitle = form.subtitle.data
         alcohol.manufacturer = form.manufacturer.data
-        alcohol.translator = form.translator.data
         alcohol.distributor = form.distributor.data
         alcohol.image = form.image.data
-        alcohol.pubdate = form.pubdate.data
         alcohol.tags_string = form.tags.data
-        alcohol.pages = form.pages.data
         alcohol.price = form.price.data
-        alcohol.binding = form.binding.data
         alcohol.numbers = form.numbers.data
         alcohol.summary = form.summary.data
         alcohol.catalog = form.catalog.data
@@ -87,16 +83,11 @@ def edit(alcohol_id):
     form.isbn.data = alcohol.isbn
     form.title.data = alcohol.title
     form.origin_title.data = alcohol.origin_title
-    form.subtitle.data = alcohol.subtitle
     form.manufacturer.data = alcohol.manufacturer
-    form.translator.data = alcohol.translator
     form.distributor.data = alcohol.distributor
     form.image.data = alcohol.image
-    form.pubdate.data = alcohol.pubdate
     form.tags.data = alcohol.tags_string
-    form.pages.data = alcohol.pages
     form.price.data = alcohol.price
-    form.binding.data = alcohol.binding
     form.numbers.data = alcohol.numbers
     form.summary.data = alcohol.summary or ""
     form.catalog.data = alcohol.catalog or ""
@@ -113,16 +104,11 @@ def add():
             isbn=form.isbn.data,
             title=form.title.data,
             origin_title=form.origin_title.data,
-            subtitle=form.subtitle.data,
             manufacturer=form.manufacturer.data,
-            translator=form.translator.data,
             distributor=form.distributor.data,
             image=form.image.data,
-            pubdate=form.pubdate.data,
             tags_string=form.tags.data,
-            pages=form.pages.data,
             price=form.price.data,
-            binding=form.binding.data,
             numbers=form.numbers.data,
             summary=form.summary.data or "",
             catalog=form.catalog.data or "")
